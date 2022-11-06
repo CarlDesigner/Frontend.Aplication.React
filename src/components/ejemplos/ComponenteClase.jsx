@@ -3,7 +3,10 @@ import React from "react";
 class ComponenteClase extends React.Component {
     render() {
         return (
-            <h3>Este es un coponente tipo clase</h3>
+            <div>
+                <h3>Componente tipo clase</h3>
+                <p>Con el siguiente mensaje: {this.props.msn}</p>
+            </div>
         )
     };
 }

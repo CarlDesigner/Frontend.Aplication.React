@@ -10,6 +10,10 @@ import Nosotros from "./components/nosotros";
 import IndexEjemplos from "./components/ejemplos";
 import ComponenteClase from './components/ejemplos/ComponenteClase';
 import ComponenteFuncion from './components/ejemplos/ComponenteFuncion';
+import IndexUsuarios from './components/usuarios';
+import IndexCategorias from './components/categorias';
+import IndexProductos from './components/productos';
+
 
 function App() {
   return (
@@ -19,8 +23,14 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Index></Index>} />
-        <Route path="nosotros" element={<Nosotros></Nosotros>} />
+        <Route path="/nosotros" element={<Nosotros></Nosotros>} />
+        <Route path="/usuarios" element={<IndexUsuarios></IndexUsuarios>}></Route>
+        <Route path="/producto" element={<IndexProductos></IndexProductos>}></Route>
+        <Route path="/categoria" element={<IndexCategorias></IndexCategorias>}></Route>
+
         <Route path="/ejemplos">
+
+
 
           <Route path="/ejemplos"
             element={<IndexEjemplos></IndexEjemplos>} />
@@ -28,7 +38,7 @@ function App() {
 
         <Route>
           <Route path="/ejemplos/clase"
-            element={<ComponenteClase></ComponenteClase>} />
+            element={<ComponenteClase msn={"Aprendiendo React con MinTIC"}></ComponenteClase>} />
         </Route>
 
         <Route>
