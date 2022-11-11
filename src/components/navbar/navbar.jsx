@@ -1,8 +1,18 @@
-import { Link } from "react-router-dom";
 import Navlinks from "../navlinks";
+import LoginButton from "./loginButton";
+import LogoutButton from "./logoutButton";
 
 
 function Navbar(props) {
+
+    let logButton = undefined;
+
+    if (props.logged) {
+        logButton = LogoutButton();
+    } else {
+        logButton = LoginButton();
+    };
+
     return (
         <header className="blog-header py-3 m-3">
             <div className="row flex-nowrap justify-content-between align-items-center">
@@ -17,11 +27,7 @@ function Navbar(props) {
                             <path d="M21 21l-5.2-5.2"></path>
                         </svg>
                     </a>
-                    <Link
-                        to={"/login"}
-                        className="btn btn-sm btn-outline-success mx-auto">
-                        Login
-                    </Link>
+                    {logButton}
                 </div>
             </div>
         </header >

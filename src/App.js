@@ -7,6 +7,7 @@ import Index from "./components/index";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer";
 import Nosotros from "./components/nosotros";
+import LogginForm from "./components/usuarios/logginForm";
 import IndexEjemplos from "./components/ejemplos";
 import ComponenteClase from './components/ejemplos/ComponenteClase';
 import ComponenteFuncion from './components/ejemplos/ComponenteFuncion';
@@ -19,10 +20,11 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar></Navbar>
+      <Navbar logged={false}></Navbar>
 
       <Routes>
         <Route path="/" element={<Index></Index>} />
+        <Route path="/login" element={<LogginForm></LogginForm>} />
         <Route path="/nosotros" element={<Nosotros></Nosotros>} />
         <Route path="/usuarios" element={<IndexUsuarios></IndexUsuarios>}></Route>
         <Route path="/producto" element={<IndexProductos></IndexProductos>}></Route>
