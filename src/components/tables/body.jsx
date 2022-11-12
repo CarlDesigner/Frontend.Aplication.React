@@ -1,3 +1,5 @@
+
+import Tools from "./tools";
 function Body(props) {
 
     /* props.data = { props.data }
@@ -5,24 +7,29 @@ function Body(props) {
     props.tools = { props.tools } */
     return (
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>John Doe</td>
-                <td>Toronto</td>
-                <td>@fatal</td>
-            </tr>
+            {
+                props.data.map(
+                    function (row, rowIndex) {
+                        return (
+                            <tr>
+                                {
+                                    props.columns.map(
+                                        function (column, columnIndex) {
+
+                                            if (columnIndex === 0) {
+                                                return <th scope="row">{row[column]}</th>
+                                            }
+                                            return <td>{row[column]}</td>
+                                        }
+                                    )
+                                }
+                                <Tools tools={props.tools} path={props.path} id={row["id"]} />
+                            </tr>
+                        );
+                    }
+                )
+            }
+
         </tbody>
     );
 }
