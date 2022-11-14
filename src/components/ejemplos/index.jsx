@@ -8,9 +8,16 @@ function IndexEjemplos(props) {
                         Ejemplo Componente TIPO CLASE
                     </Link>
                 </li>
+
                 <li>
                     <Link to={"/ejemplos/funcion"}>
                         Ejemplo Componente TIPO FUNCION
+                    </Link>
+                </li>
+
+                <li>
+                    <Link to={"/ejemplos/hooks"}>
+                        Ejemplo Hooks
                     </Link>
                 </li>
             </ul>

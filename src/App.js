@@ -14,6 +14,10 @@ import ComponenteFuncion from './components/ejemplos/ComponenteFuncion';
 import IndexUsuarios from './components/usuarios';
 import IndexCategorias from './components/categorias';
 import IndexProductos from './components/productos';
+import EjemploHooks from './components/ejemplos/ejemploHooks';
+import CreateCategory from './components/categorias/createCategory';
+import ActualizarCategoria from './components/categorias/actualizarCategoria';
+import EliminarCategoria from './components/categorias/eliminarCategoria';
 
 
 function App() {
@@ -28,12 +32,37 @@ function App() {
         <Route path="/nosotros" element={<Nosotros></Nosotros>} />
         <Route path="/usuarios" element={<IndexUsuarios></IndexUsuarios>}></Route>
         <Route path="/producto" element={<IndexProductos></IndexProductos>}></Route>
-        <Route path="/categoria" element={<IndexCategorias></IndexCategorias>}></Route>
+
+
+        <Route path="/categoria">
+          <Route
+            path="/categoria"
+            element={<IndexCategorias></IndexCategorias>}
+          ></Route>
+
+          <Route
+            path="/categoria/create"
+            element={<CreateCategory></CreateCategory>}
+          ></Route>
+
+          <Route path="/categoria/delete">
+            <Route
+              path=":idCategoria"
+              element={<EliminarCategoria></EliminarCategoria>}
+            ></Route>
+          </Route>
+
+          <Route path="/categoria/update">
+            <Route
+              path=":idCategoria"
+              element={<ActualizarCategoria></ActualizarCategoria>}
+            ></Route>
+          </Route>
+
+
+        </Route>
 
         <Route path="/ejemplos">
-
-
-
           <Route path="/ejemplos"
             element={<IndexEjemplos></IndexEjemplos>} />
         </Route>
@@ -46,6 +75,11 @@ function App() {
         <Route>
           <Route path="/ejemplos/funcion"
             element={<ComponenteFuncion msn={"React me da dolor de cabeza"}></ComponenteFuncion>} />
+        </Route>
+
+        <Route>
+          <Route path="/ejemplos/hooks"
+            element={<EjemploHooks />} />
         </Route>
 
       </Routes>

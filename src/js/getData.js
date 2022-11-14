@@ -2,108 +2,118 @@ let categories = [
     {
         id: 1,
         name: "smartphones",
-        description: "descrip"
+        description: "descrip",
     },
     {
         id: 2,
         name: "laptops",
-        description: "descrip"
+        description: "descrip",
     },
     {
         id: 3,
         name: "fragrances",
-        description: "descrip"
+        description: "descrip",
     },
     {
         id: 4,
-        name: "furniture",
-        description: "descrip"
+        name: "skincare",
+        description: "descrip",
     },
     {
         id: 5,
-        name: "tops",
-        description: "descrip"
+        name: "groceries",
+        description: "descrip",
     },
     {
         id: 6,
-        name: "womens-dresses",
-        description: "descrip"
+        name: "home-decoration",
+        description: "descrip",
     },
     {
         id: 7,
-        name: "womens-shoes",
-        description: "descrip"
+        name: "furniture",
+        description: "descrip",
     },
     {
         id: 8,
-        name: "mens-shirts",
-        description: "descrip"
+        name: "tops",
+        description: "descrip",
     },
     {
         id: 9,
-        name: "mens-shoes",
-        description: "descrip"
+        name: "womens-dresses",
+        description: "descrip",
     },
     {
         id: 10,
-        name: "motorcycle",
-        description: "descrip"
+        name: "womens-shoes",
+        description: "descrip",
     },
     {
         id: 11,
-        name: "automotive",
-        description: "descrip"
+        name: "mens-shirts",
+        description: "descrip",
     },
     {
         id: 12,
-        name: "sunglasses",
-        description: "descrip"
+        name: "mens-shoes",
+        description: "descrip",
     },
     {
         id: 13,
-        name: "womens-jewellery",
-        description: "descrip"
+        name: "mens-watches",
+        description: "descrip",
     },
     {
         id: 14,
-        name: "mens-watches",
-        description: "descrip"
+        name: "womens-watches",
+        description: "descrip",
     },
     {
         id: 15,
-        name: "womens-watches",
-        description: "descrip"
+        name: "womens-bags",
+        description: "descrip",
     },
     {
         id: 16,
-        name: "womens-bags",
-        description: "descrip"
+        name: "womens-jewellery",
+        description: "descrip",
     },
     {
         id: 17,
-        name: "home-decoration",
-        description: "descrip"
+        name: "sunglasses",
+        description: "descrip",
     },
     {
         id: 18,
-        name: "groceries",
-        description: "descrip"
+        name: "automotive",
+        description: "descrip",
     },
     {
         id: 19,
-        name: "skincare",
-        description: "descrip"
+        name: "motorcycle",
+        description: "descrip",
     },
     {
         id: 20,
         name: "lighting",
-        description: "descrip"
-    }
-]
-
+        description: "descrip",
+    },
+];
 
 function getData(url, headers, method, data) {
     return categories;
-};
+}
 
-export default getData;
+function getCategoryById(id) {
+    let result = null;
+    for (let i = 0; i < categories.length; i++) {
+        if (categories[i].id.toString() === id.toString()) {
+            result = categories[i];
+            break;
+        }
+    }
+    return result;
+}
+
+export { getData, getCategoryById };
