@@ -20,14 +20,16 @@ def generate_password_button():
 # Crear ventana
 window = tk.Tk()
 window.title("Generador de contraseñas")
+# Definir tamaño de la ventana
+window.geometry("400x300+{}+{}".format(int((window.winfo_screenwidth() - 400) / 2), int((window.winfo_screenheight() - 300) / 2)))
 
-# Crear botón
-generate_button = tk.Button(window, text="Generar contraseña", command=generate_password_button)
-generate_button.pack(pady=10)
+# Crear etiqueta para mostrar la contraseña
+password_label = tk.Label(window, text="", font=("Arial", 12))  # Agregar fuente y tamaño
+password_label.pack(side=tk.TOP, pady=10)  # Colocar la etiqueta arriba de todo, con un margen inferior
 
-# Crear etiqueta
-password_label = tk.Label(window, text="")
-password_label.pack()
+# Crear botón para generar la contraseña
+generate_button = tk.Button(window, text="Generar contraseña", font=("Arial", 12), command=generate_password_button)
+generate_button.pack(side=tk.BOTTOM, pady=10)  # Colocar el botón debajo de todo, con un margen superior
 
 # Mostrar ventana
 window.mainloop()
